@@ -40,7 +40,7 @@ document.addEventListener('scroll', function() {
 }*/
 
 bh = new BlogHub({
-    'url': '/blog',
+    'url': '/blogfr',
     'about': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel mi ut felis tempus commodo nec id erat. Suspendisse consectetur dapibus velit ut lacinia.'
 });
 
