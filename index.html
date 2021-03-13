@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Mon blog - Accueil</title>
+    <meta name="author" content="name" />
+    <meta name="description" content="description here" />
+    <meta name="keywords" content="keywords,here" />
+    <link
+      href="https://unpkg.com/tailwindcss/dist/tailwind.min.css"
+      rel="stylesheet"
+	/>
+    <link
+      href="css/loader.css"
+      rel="stylesheet"
+	/>
+  </head>
+
+  
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+	<nav id="header" class="fixed w-full z-10 top-0">
+
+		<div id="progress" class="h-1 z-20 top-0" style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+
+		<div class="w-full md:max-w-4xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+
+			<div class="pl-4">
+				<a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" id="home-link" href="#">
+					Mon blog
+				</a>
+			</div>
+		</div>
+	</nav>
+
+	<!--Container-->
+	<div class="container w-full md:max-w-3xl mx-auto pt-20">
+
+		<div id="posts-content">
+			<div class="w-full overflow-hidden">
+				<div class="w-1/2 inline-block relative fluentProgressBar-waiting"></div>
+			</div>
+		</div>
+
+		<!--Divider-->
+		<hr class="border-b-2 border-gray-400 mb-8 mx-4  mt-7">
+
+		<!--Next & Prev Links
+		<div class="font-sans flex justify-between content-center px-4 pb-12">
+			<div class="text-left">
+				<span class="text-xs md:text-sm font-normal text-gray-600"><a <a href="#" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">&lt; Pots plus récents</a></span><br>
+			</div>
+			<div class="text-right">
+				<span class="text-xs md:text-sm font-normal text-gray-600"><a href="#" class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Pots moins récents &gt;</a></span><br>
+			</div>
+		</div>-->
+
+	</div>
+	<!--/container-->
+
+	<footer class="bg-white border-t border-gray-400 shadow">
+		<div class="container max-w-4xl mx-auto flex py-8">
+
+			<div class="w-full mx-auto flex flex-wrap">
+				<div class="flex w-full ">
+					<div class="px-8">
+						<h3 class="font-bold text-gray-900">A propos</h3>
+						<p class="py-4 text-gray-600 text-sm" id="about-text"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script id="template-posts" type="x-tmpl-mustache">
+		{{#posts}}
+		<div class="w-full px-4 md:px-6 text-xl text-gray-800 leading-normal" style="font-family:Georgia,serif;">
+			<div class="font-sans">
+				<h1 class="font-bold font-sans break-normal text-gray-900 pt-6 pb-2 text-3xl md:text-4xl"><a href="{{config.url}}/post.html?slug={{slug}}">{{title}}</a></h1>
+				<p class="text-sm md:text-base font-normal text-gray-600">Publié le {{publishDate}} par {{author}} {{#editDate}}<span class="text-gray-400">- <i>Edité le {{editDate}}</i>{{/editDate}}</span></p>
+			</div>
+			<p class="py-1">
+				<p>{{description}}</p>
+			</p>
+		</div>
+		{{/posts}}
+	</script>
+
+	<script src="js/bloghub.js"></script>
+	<script src="js/page.js"></script>
+	<script 
+		src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.1.0/mustache.min.js" 
+		integrity="sha512-HYiNpwSxYuji84SQbCU5m9kHEsRqwWypXgJMBtbRSumlx1iBB6QaxgEBZHSHEGM+fKyCX/3Kb5V5jeVXm0OglQ==" 
+		crossorigin="anonymous"></script>
+	<script src="js/home.js"></script>
+
+</body>
+
+</html>
